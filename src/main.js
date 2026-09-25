@@ -1,7 +1,19 @@
 import './style.css'
-import { gsap } from 'gsap'
+import gsap from 'gsap'
 
-document.querySelector('#app').innerHTML = `
+
+/* ==================================================
+   MAIN ELEMENTS
+   ================================================== */
+
+const app = document.querySelector('#app')
+
+
+/* ==================================================
+   PAGE HTML
+   ================================================== */
+
+app.innerHTML = `
   <main class="lunar-page">
 
     <!-- ================= STAR FIELD ================= -->
@@ -14,8 +26,11 @@ document.querySelector('#app').innerHTML = `
     <!-- ================= MOON ================= -->
 
     <div class="moon">
+
       <div class="moon-glow"></div>
+
       <div class="moon-surface"></div>
+
     </div>
 
 
@@ -28,24 +43,26 @@ document.querySelector('#app').innerHTML = `
 
     <!-- ================= OPENING ================= -->
 
-    <section class="hero" id="opening">
+    <section class="hero" id="hero">
 
-      <p class="eyebrow">XXIX</p>
+      <div class="eyebrow">
+        XXIX
+      </div>
 
       <h1>
-        LUNAR<span>XXIX</span>
+        LUNAR
+        <span>XXIX</span>
       </h1>
 
-      <p class="subtitle">
+      <div class="subtitle">
         FOR JAY
-      </p>
+      </div>
 
       <button
         class="enter-button"
         id="enterButton"
-        type="button"
       >
-        <span>ENTER</span>
+        ENTER
         <span class="arrow">→</span>
       </button>
 
@@ -54,19 +71,24 @@ document.querySelector('#app').innerHTML = `
 
     <!-- ================= DOMAIN I ================= -->
 
-    <section class="domain-screen" id="domainScreen">
+    <section
+      class="domain-screen"
+      id="domainScreen"
+    >
 
       <div class="domain-content">
 
-        <p class="domain-label">
+        <div class="domain-label">
           LUNAR DOMAIN
-        </p>
+        </div>
 
-        <h2>JAY</h2>
+        <h2>
+          JAY
+        </h2>
 
-        <p class="domain-number">
+        <div class="domain-number">
           XXIX
-        </p>
+        </div>
 
         <div class="domain-line"></div>
 
@@ -97,7 +119,6 @@ document.querySelector('#app').innerHTML = `
         <button
           class="continue-button"
           id="continueButton"
-          type="button"
         >
           CONTINUE
           <span>→</span>
@@ -110,54 +131,184 @@ document.querySelector('#app').innerHTML = `
 
     <!-- ================= DOMAIN II ================= -->
 
-    <section class="trial-screen" id="trialScreen">
+    <section
+      class="trial-screen"
+      id="trialScreen"
+    >
 
       <div class="trial-content">
 
-        <p class="trial-label">
+        <div class="trial-label">
           DOMAIN II
-        </p>
+        </div>
 
         <h2>
           THE MOONLIT<br>
           COURT
         </h2>
 
-        <p class="trial-type">
+        <div class="trial-type">
           BADMINTON TRIAL
-        </p>
+        </div>
 
         <div class="trial-line"></div>
 
         <div class="trial-stats">
 
           <div>
-            <span>SKILL</span>
-            <strong>SPEED</strong>
+            <span>SPEED</span>
           </div>
 
           <div>
-            <span>SKILL</span>
-            <strong>PRECISION</strong>
+            <span>PRECISION</span>
           </div>
 
           <div>
-            <span>SKILL</span>
-            <strong>REFLEX</strong>
+            <span>REFLEX</span>
           </div>
 
         </div>
 
-
-        <!-- BEGIN TRIAL BUTTON -->
-
         <button
           class="trial-button"
           id="trialButton"
-          type="button"
         >
-          <span>BEGIN TRIAL</span>
+          BEGIN TRIAL
           <span class="trial-arrow">→</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= GAME ================= -->
+
+    <section
+      class="game-screen"
+      id="gameScreen"
+    >
+
+      <div class="game-header">
+
+        <div>
+          <span class="game-label">
+            MOONLIT COURT
+          </span>
+
+          <strong>
+            BADMINTON TRIAL
+          </strong>
+        </div>
+
+        <div class="game-score">
+
+          <span>
+            SCORE
+          </span>
+
+          <strong id="score">
+            0
+          </strong>
+
+        </div>
+
+        <div class="game-timer">
+
+          <span>
+            TIME
+          </span>
+
+          <strong id="timer">
+            30
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= COURT ================= -->
+
+      <div class="court" id="court">
+
+        <div class="court-line court-top"></div>
+        <div class="court-line court-bottom"></div>
+        <div class="court-line court-left"></div>
+        <div class="court-line court-right"></div>
+
+        <div class="court-net"></div>
+
+
+        <!-- ================= SHUTTLE ================= -->
+
+        <div
+          class="shuttle"
+          id="shuttle"
+          role="button"
+          aria-label="Hit the shuttle"
+        >
+
+          <div class="shuttle-feathers"></div>
+
+          <div class="shuttle-head"></div>
+
+        </div>
+
+      </div>
+
+
+      <p class="game-instruction">
+        HIT THE SHUTTLE
+      </p>
+
+    </section>
+
+
+    <!-- ================= GAME OVER ================= -->
+
+    <section
+      class="result-screen"
+      id="resultScreen"
+    >
+
+      <div class="result-content">
+
+        <div class="result-label">
+          TRIAL COMPLETE
+        </div>
+
+        <h2>
+          MOONLIT
+          <span>VERDICT</span>
+        </h2>
+
+        <div class="result-line"></div>
+
+        <div class="final-score-label">
+          FINAL SCORE
+        </div>
+
+        <div
+          class="final-score"
+          id="finalScore"
+        >
+          0
+        </div>
+
+        <div
+          class="final-rank"
+          id="finalRank"
+        >
+          NOVICE
+        </div>
+
+        <button
+          class="restart-button"
+          id="restartButton"
+        >
+          RUN AGAIN
+          <span>↻</span>
         </button>
 
       </div>
@@ -168,251 +319,157 @@ document.querySelector('#app').innerHTML = `
     <!-- ================= INSIGNIA ================= -->
 
     <div class="insignia">
+
       <span></span>
-      <p>XXIX</p>
+
+      <p>
+        LUNARXXIX
+      </p>
+
       <span></span>
+
     </div>
 
   </main>
 `
 
 
-// ==================================================
-// ELEMENTS
-// ==================================================
+/* ==================================================
+   ELEMENT REFERENCES
+   ================================================== */
+
+const hero = document.querySelector('#hero')
+const domainScreen = document.querySelector('#domainScreen')
+const trialScreen = document.querySelector('#trialScreen')
+const gameScreen = document.querySelector('#gameScreen')
+const resultScreen = document.querySelector('#resultScreen')
 
 const enterButton = document.querySelector('#enterButton')
 const continueButton = document.querySelector('#continueButton')
 const trialButton = document.querySelector('#trialButton')
+const restartButton = document.querySelector('#restartButton')
 
-const opening = document.querySelector('#opening')
-const domainScreen = document.querySelector('#domainScreen')
-const trialScreen = document.querySelector('#trialScreen')
+const court = document.querySelector('#court')
+const shuttle = document.querySelector('#shuttle')
+
+const scoreElement = document.querySelector('#score')
+const timerElement = document.querySelector('#timer')
+
+const finalScoreElement = document.querySelector('#finalScore')
+const finalRankElement = document.querySelector('#finalRank')
 
 
-// ==================================================
-// INITIAL STATE
-// ==================================================
+/* ==================================================
+   INITIAL SCREEN STATES
+   ================================================== */
 
-// Domain I starts hidden.
 gsap.set(domainScreen, {
   opacity: 0,
   visibility: 'hidden',
   pointerEvents: 'none'
 })
 
-// Domain II starts hidden.
 gsap.set(trialScreen, {
   opacity: 0,
   visibility: 'hidden',
   pointerEvents: 'none'
 })
 
-
-// ==================================================
-// INTRO ANIMATION
-// ==================================================
-
-const intro = gsap.timeline({
-  defaults: {
-    ease: 'power3.out'
-  }
+gsap.set(gameScreen, {
+  opacity: 0,
+  visibility: 'hidden',
+  pointerEvents: 'none'
 })
 
-intro
-  .from('.moon', {
-    scale: 0.7,
-    opacity: 0,
-    duration: 2
-  })
-
-  .from('.hero .eyebrow', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8
-  }, '-=1')
-
-  .from('.hero h1', {
-    y: 30,
-    opacity: 0,
-    duration: 1
-  }, '-=0.5')
-
-  .from('.subtitle', {
-    y: 15,
-    opacity: 0,
-    duration: 0.7
-  }, '-=0.5')
-
-  .from('.enter-button', {
-    y: 15,
-    opacity: 0,
-    duration: 0.7
-  }, '-=0.4')
-
-
-// ==================================================
-// MOON FLOAT
-// ==================================================
-
-gsap.to('.moon', {
-  y: -12,
-  duration: 4,
-  repeat: -1,
-  yoyo: true,
-  ease: 'sine.inOut'
+gsap.set(resultScreen, {
+  opacity: 0,
+  visibility: 'hidden',
+  pointerEvents: 'none'
 })
 
 
-// ==================================================
-// CLOUD MOVEMENT
-// ==================================================
-
-gsap.to('.cloud-1', {
-  x: 120,
-  duration: 18,
-  repeat: -1,
-  yoyo: true,
-  ease: 'sine.inOut'
-})
-
-gsap.to('.cloud-2', {
-  x: -100,
-  duration: 22,
-  repeat: -1,
-  yoyo: true,
-  ease: 'sine.inOut'
-})
-
-gsap.to('.cloud-3', {
-  x: 80,
-  duration: 25,
-  repeat: -1,
-  yoyo: true,
-  ease: 'sine.inOut'
-})
-
-
-// ==================================================
-// MOUSE PARALLAX
-// ==================================================
-
-document.addEventListener('mousemove', (event) => {
-
-  const x =
-    (event.clientX / window.innerWidth - 0.5) * 2
-
-  const y =
-    (event.clientY / window.innerHeight - 0.5) * 2
-
-  gsap.to('.moon', {
-    x: x * 12,
-    duration: 1.2,
-    ease: 'power2.out'
-  })
-
-  gsap.to('.stars-1', {
-    x: x * 8,
-    y: y * 8,
-    duration: 1.5
-  })
-
-  gsap.to('.stars-2', {
-    x: x * 16,
-    y: y * 16,
-    duration: 1.5
-  })
-
-  gsap.to('.stars-3', {
-    x: x * 25,
-    y: y * 25,
-    duration: 1.5
-  })
-
-})
-
-
-// ==================================================
-// ENTER → DOMAIN I
-// ==================================================
+/* ==================================================
+   OPENING → DOMAIN I
+   ================================================== */
 
 enterButton.addEventListener('click', () => {
 
   const transition = gsap.timeline()
 
   transition
-
-    // Hide opening
-    .to(opening, {
+    .to(hero, {
       opacity: 0,
-      y: -30,
+      y: -40,
       duration: 0.8,
       ease: 'power2.inOut'
     })
 
-    // Show Domain I
+    .set(hero, {
+      visibility: 'hidden',
+      pointerEvents: 'none'
+    })
+
     .set(domainScreen, {
       visibility: 'visible',
-      pointerEvents: 'auto'
+      pointerEvents: 'auto',
+      opacity: 0,
+      y: 30
     })
 
     .to(domainScreen, {
       opacity: 1,
+      y: 0,
       duration: 1,
       ease: 'power3.out'
-    }, '-=0.2')
+    })
 
-    // Domain I content
     .from('.domain-label', {
-      y: 20,
+      y: 15,
       opacity: 0,
-      duration: 0.6
-    }, '-=0.5')
+      duration: 0.5
+    }, '-=0.6')
 
     .from('.domain-content h2', {
-      scale: 0.85,
+      scale: 0.92,
       opacity: 0,
-      duration: 0.8
+      duration: 0.7,
+      ease: 'power3.out'
     }, '-=0.4')
 
     .from('.domain-number', {
       opacity: 0,
-      y: 15,
-      duration: 0.5
-    }, '-=0.4')
+      duration: 0.4
+    }, '-=0.3')
 
     .from('.domain-line', {
       scaleX: 0,
-      duration: 0.6
-    }, '-=0.3')
+      duration: 0.5
+    }, '-=0.2')
 
     .from('.stat', {
       y: 15,
       opacity: 0,
       duration: 0.4,
-      stagger: 0.1
+      stagger: 0.08
     }, '-=0.2')
 
-    .from('.continue-button', {
+    .from(continueButton, {
       y: 15,
       opacity: 0,
-      duration: 0.6
-    }, '-=0.2')
-
+      duration: 0.5
+    }, '-=0.1')
 })
 
 
-// ==================================================
-// CONTINUE → DOMAIN II
-// ==================================================
+/* ==================================================
+   DOMAIN I → DOMAIN II
+   ================================================== */
 
 continueButton.addEventListener('click', () => {
 
   const transition = gsap.timeline()
 
   transition
-
-    // Hide Domain I
     .to(domainScreen, {
       opacity: 0,
       y: -40,
@@ -425,77 +482,497 @@ continueButton.addEventListener('click', () => {
       pointerEvents: 'none'
     })
 
-    // Turn Domain II on
     .set(trialScreen, {
       visibility: 'visible',
       pointerEvents: 'auto',
       opacity: 0,
-      y: 0
+      y: 30
     })
 
-    // Fade Domain II in
     .to(trialScreen, {
       opacity: 1,
+      y: 0,
       duration: 1,
       ease: 'power3.out'
     })
 
-    // Domain II content
     .from('.trial-label', {
-      y: 20,
-      opacity: 0,
-      duration: 0.5
-    }, '-=0.5')
-
-    .from('.trial-content h2', {
-      y: 30,
-      opacity: 0,
-      duration: 0.8
-    }, '-=0.4')
-
-    .from('.trial-type', {
       y: 15,
       opacity: 0,
       duration: 0.5
+    }, '-=0.6')
+
+    .from('.trial-content h2', {
+      scale: 0.94,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out'
     }, '-=0.4')
+
+    .from('.trial-type', {
+      opacity: 0,
+      duration: 0.4
+    }, '-=0.3')
 
     .from('.trial-line', {
       scaleX: 0,
       duration: 0.5
-    }, '-=0.3')
-
-    .from('.trial-stats > div', {
-      y: 15,
-      opacity: 0,
-      duration: 0.4,
-      stagger: 0.1
     }, '-=0.2')
 
-    // Begin Trial button
-    .from('.trial-button', {
-      y: 25,
+    .from('.trial-stats > div', {
+      y: 12,
       opacity: 0,
-      scale: 0.9,
-      duration: 0.7,
-      ease: 'back.out(1.5)'
+      duration: 0.4,
+      stagger: 0.08
+    }, '-=0.2')
+
+    .from(trialButton, {
+      y: 15,
+      opacity: 0,
+      duration: 0.5
     }, '-=0.1')
+})
+
+
+/* ==================================================
+   GAME VARIABLES
+   ================================================== */
+
+let score = 0
+let timeLeft = 30
+
+let gameRunning = false
+
+let timerInterval = null
+let shuttleTween = null
+
+
+/* ==================================================
+   SHUTTLE POSITION
+   ================================================== */
+
+function moveShuttle() {
+
+  if (!gameRunning) {
+    return
+  }
+
+  const courtWidth = court.clientWidth
+  const courtHeight = court.clientHeight
+
+  const shuttleWidth = shuttle.offsetWidth
+  const shuttleHeight = shuttle.offsetHeight
+
+  /*
+    Keep the shuttle safely inside
+    the playable court.
+  */
+
+  const padding = 45
+
+  const minX = padding
+  const maxX = courtWidth - shuttleWidth - padding
+
+  const minY = padding
+  const maxY = courtHeight - shuttleHeight - padding
+
+  const x =
+    minX +
+    Math.random() *
+    Math.max(1, maxX - minX)
+
+  const y =
+    minY +
+    Math.random() *
+    Math.max(1, maxY - minY)
+
+
+  /*
+    Cancel the previous movement.
+  */
+
+  if (shuttleTween) {
+    shuttleTween.kill()
+  }
+
+
+  /*
+    Movement becomes faster
+    as the score increases.
+  */
+
+  const duration =
+    Math.max(
+      0.22,
+      0.65 - score * 0.012
+    )
+
+
+  shuttleTween = gsap.to(shuttle, {
+
+    x,
+    y,
+
+    duration,
+
+    ease: 'power2.inOut',
+
+    onComplete: () => {
+
+      if (gameRunning) {
+        moveShuttle()
+      }
+
+    }
+
+  })
+}
+
+
+/* ==================================================
+   START GAME
+   ================================================== */
+
+function startGame() {
+
+  score = 0
+  timeLeft = 30
+
+  gameRunning = true
+
+  scoreElement.textContent = score
+  timerElement.textContent = timeLeft
+
+
+  /*
+    Make sure the shuttle starts
+    in a known position.
+  */
+
+  gsap.set(shuttle, {
+    x: 0,
+    y: 0
+  })
+
+
+  moveShuttle()
+
+
+  /*
+    Start countdown.
+  */
+
+  clearInterval(timerInterval)
+
+  timerInterval = setInterval(() => {
+
+    timeLeft--
+
+    timerElement.textContent = timeLeft
+
+
+    if (timeLeft <= 0) {
+
+      endGame()
+
+    }
+
+  }, 1000)
+
+}
+
+
+/* ==================================================
+   HIT SHUTTLE
+   ================================================== */
+
+function hitShuttle(event) {
+
+  event.preventDefault()
+  event.stopPropagation()
+
+
+  if (!gameRunning) {
+    return
+  }
+
+
+  /*
+    Increase score.
+  */
+
+  score++
+
+  scoreElement.textContent = score
+
+
+  /*
+    Small hit animation.
+  */
+
+  gsap.killTweensOf(shuttle)
+
+  gsap.timeline()
+
+    .to(shuttle, {
+      scale: 1.45,
+      duration: 0.08,
+      ease: 'power2.out'
+    })
+
+    .to(shuttle, {
+      scale: 1,
+      duration: 0.12,
+      ease: 'power2.in'
+    })
+
+
+  /*
+    Immediately move somewhere new.
+  */
+
+  moveShuttle()
+
+}
+
+
+/* ==================================================
+   SHUTTLE INPUT
+   ================================================== */
+
+shuttle.addEventListener(
+  'pointerdown',
+  hitShuttle
+)
+
+
+/* ==================================================
+   BEGIN TRIAL → GAME
+   ================================================== */
+
+trialButton.addEventListener('click', () => {
+
+  const transition = gsap.timeline()
+
+  transition
+
+    .to(trialScreen, {
+      opacity: 0,
+      y: -40,
+      duration: 0.7,
+      ease: 'power2.inOut'
+    })
+
+    .set(trialScreen, {
+      visibility: 'hidden',
+      pointerEvents: 'none'
+    })
+
+    .set(gameScreen, {
+      visibility: 'visible',
+      pointerEvents: 'auto',
+      opacity: 0,
+      y: 30
+    })
+
+    .to(gameScreen, {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: 'power3.out'
+    })
+
+    .from('.game-header', {
+      y: -20,
+      opacity: 0,
+      duration: 0.6
+    }, '-=0.5')
+
+    .from('.court', {
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.4')
+
+    .from('.game-instruction', {
+      y: 15,
+      opacity: 0,
+      duration: 0.5
+    }, '-=0.3')
+
+    .from(shuttle, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'back.out(1.7)'
+    }, '-=0.2')
+
+    .call(() => {
+      startGame()
+    })
 
 })
 
 
-// ==================================================
-// BEGIN TRIAL
-// ==================================================
+/* ==================================================
+   GET RANK
+   ================================================== */
 
-trialButton.addEventListener('click', () => {
+function getRank(finalScore) {
 
-  console.log('BADMINTON TRIAL STARTED')
+  if (finalScore >= 40) {
+    return 'LEGEND'
+  }
 
-  gsap.to(trialButton, {
-    scale: 1.08,
-    duration: 0.15,
-    yoyo: true,
-    repeat: 1
-  })
+  if (finalScore >= 30) {
+    return 'MASTER'
+  }
+
+  if (finalScore >= 20) {
+    return 'ELITE'
+  }
+
+  if (finalScore >= 10) {
+    return 'WARRIOR'
+  }
+
+  return 'NOVICE'
+}
+
+
+/* ==================================================
+   END GAME
+   ================================================== */
+
+function endGame() {
+
+  if (!gameRunning) {
+    return
+  }
+
+  gameRunning = false
+
+  clearInterval(timerInterval)
+
+  if (shuttleTween) {
+    shuttleTween.kill()
+  }
+
+
+  const rank = getRank(score)
+
+  finalScoreElement.textContent = score
+  finalRankElement.textContent = rank
+
+
+  const transition = gsap.timeline()
+
+  transition
+
+    .to(gameScreen, {
+      opacity: 0,
+      scale: 0.97,
+      duration: 0.8,
+      ease: 'power2.inOut'
+    })
+
+    .set(gameScreen, {
+      visibility: 'hidden',
+      pointerEvents: 'none'
+    })
+
+    .set(resultScreen, {
+      visibility: 'visible',
+      pointerEvents: 'auto',
+      opacity: 0,
+      scale: 1.03
+    })
+
+    .to(resultScreen, {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      ease: 'power3.out'
+    })
+
+    .from('.result-label', {
+      y: 15,
+      opacity: 0,
+      duration: 0.4
+    }, '-=0.5')
+
+    .from('.result-content h2', {
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.7
+    }, '-=0.3')
+
+    .from('.final-score-label', {
+      opacity: 0,
+      duration: 0.3
+    }, '-=0.2')
+
+    .from(finalScoreElement, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'back.out(1.7)'
+    }, '-=0.1')
+
+    .from(finalRankElement, {
+      y: 15,
+      opacity: 0,
+      duration: 0.5
+    }, '-=0.2')
+
+    .from(restartButton, {
+      y: 15,
+      opacity: 0,
+      duration: 0.5
+    }, '-=0.2')
+
+}
+
+
+/* ==================================================
+   RUN AGAIN
+   ================================================== */
+
+restartButton.addEventListener('click', () => {
+
+  const transition = gsap.timeline()
+
+  transition
+
+    .to(resultScreen, {
+      opacity: 0,
+      scale: 0.97,
+      duration: 0.6,
+      ease: 'power2.inOut'
+    })
+
+    .set(resultScreen, {
+      visibility: 'hidden',
+      pointerEvents: 'none'
+    })
+
+    .set(gameScreen, {
+      visibility: 'visible',
+      pointerEvents: 'auto',
+      opacity: 0,
+      scale: 1.03
+    })
+
+    .to(gameScreen, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+
+    .call(() => {
+      startGame()
+    })
 
 })

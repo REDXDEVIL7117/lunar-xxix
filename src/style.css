@@ -890,3 +890,577 @@ body {
     display: none;
   }
 }
+/* ==================================================
+   BADMINTON GAME SCREEN
+   ================================================== */
+
+.game-screen {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 70;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(70, 55, 160, 0.18),
+      transparent 55%
+    ),
+    rgba(2, 3, 10, 0.92);
+}
+
+
+/* ================= GAME HEADER ================= */
+
+.game-header {
+  position: absolute;
+
+  top: 35px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+
+  align-items: center;
+
+  gap: 55px;
+
+  width: min(900px, 88vw);
+
+  font-family: Arial, sans-serif;
+}
+
+.game-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.game-header > div:first-child {
+  text-align: left;
+}
+
+.game-label,
+.game-score span,
+.game-timer span {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.game-header strong {
+  font-size: 13px;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.game-score,
+.game-timer {
+  text-align: center;
+}
+
+.game-score strong,
+.game-timer strong {
+  font-size: 24px;
+
+  color: #aaa3ed;
+
+  text-shadow:
+    0 0 20px rgba(150, 130, 255, 0.35);
+}
+
+
+/* ================= COURT ================= */
+
+.court {
+  position: relative;
+
+  width: min(850px, 82vw);
+  height: min(500px, 58vh);
+
+  border: 1px solid rgba(220, 215, 255, 0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(100, 90, 180, 0.08),
+      rgba(5, 6, 18, 0.55)
+    );
+
+  box-shadow:
+    inset 0 0 80px rgba(90, 75, 180, 0.08),
+    0 0 50px rgba(80, 65, 170, 0.08);
+
+  overflow: hidden;
+}
+
+
+/* ================= COURT LINES ================= */
+
+.court-line {
+  position: absolute;
+
+  background:
+    rgba(220, 215, 255, 0.28);
+
+  pointer-events: none;
+}
+
+.court-top,
+.court-bottom {
+  left: 7%;
+  right: 7%;
+
+  height: 1px;
+}
+
+.court-top {
+  top: 10%;
+}
+
+.court-bottom {
+  bottom: 10%;
+}
+
+.court-left,
+.court-right {
+  top: 10%;
+  bottom: 10%;
+
+  width: 1px;
+}
+
+.court-left {
+  left: 7%;
+}
+
+.court-right {
+  right: 7%;
+}
+
+
+/* ================= COURT NET ================= */
+
+.court-net {
+  position: absolute;
+
+  top: 10%;
+  bottom: 10%;
+
+  left: 50%;
+
+  width: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(220, 215, 255, 0.65) 12%,
+      rgba(220, 215, 255, 0.65) 88%,
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px rgba(180, 170, 255, 0.15);
+}
+
+
+/* ================= INSTRUCTION ================= */
+
+.game-instruction {
+  margin-top: 22px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .game-header {
+    top: 25px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .game-header > div:first-child {
+    grid-column: 1 / -1;
+
+    text-align: center;
+  }
+
+  .court {
+    width: 88vw;
+    height: 58vh;
+  }
+
+}
+
+/* ==================================================
+   BADMINTON GAME SCREEN
+   ================================================== */
+
+.game-screen {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 70;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(70, 55, 160, 0.18),
+      transparent 55%
+    ),
+    rgba(2, 3, 10, 0.92);
+}
+
+
+/* ==================================================
+   GAME HEADER
+   ================================================== */
+
+.game-header {
+  position: absolute;
+
+  top: 35px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+
+  align-items: center;
+
+  gap: 55px;
+
+  width: min(900px, 88vw);
+
+  font-family: Arial, sans-serif;
+}
+
+.game-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.game-header > div:first-child {
+  text-align: left;
+}
+
+.game-label,
+.game-score span,
+.game-timer span {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.game-header strong {
+  font-size: 13px;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.game-score,
+.game-timer {
+  text-align: center;
+}
+
+.game-score strong,
+.game-timer strong {
+  font-size: 24px;
+
+  color: #aaa3ed;
+
+  text-shadow:
+    0 0 20px rgba(150, 130, 255, 0.35);
+}
+
+
+/* ==================================================
+   COURT
+   ================================================== */
+
+.court {
+  position: relative;
+
+  width: min(850px, 82vw);
+  height: min(500px, 58vh);
+
+  border: 1px solid rgba(220, 215, 255, 0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(100, 90, 180, 0.08),
+      rgba(5, 6, 18, 0.55)
+    );
+
+  box-shadow:
+    inset 0 0 80px rgba(90, 75, 180, 0.08),
+    0 0 50px rgba(80, 65, 170, 0.08);
+
+  overflow: hidden;
+}
+
+
+/* ==================================================
+   COURT LINES
+   ================================================== */
+
+.court-line {
+  position: absolute;
+
+  background: rgba(220, 215, 255, 0.28);
+
+  pointer-events: none;
+}
+
+.court-top,
+.court-bottom {
+  left: 7%;
+  right: 7%;
+
+  height: 1px;
+}
+
+.court-top {
+  top: 10%;
+}
+
+.court-bottom {
+  bottom: 10%;
+}
+
+.court-left,
+.court-right {
+  top: 10%;
+  bottom: 10%;
+
+  width: 1px;
+}
+
+.court-left {
+  left: 7%;
+}
+
+.court-right {
+  right: 7%;
+}
+
+
+/* ==================================================
+   COURT NET
+   ================================================== */
+
+.court-net {
+  position: absolute;
+
+  top: 10%;
+  bottom: 10%;
+
+  left: 50%;
+
+  width: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(220, 215, 255, 0.65) 12%,
+      rgba(220, 215, 255, 0.65) 88%,
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px rgba(180, 170, 255, 0.15);
+}
+
+
+/* ==================================================
+   SHUTTLE
+   ================================================== */
+
+.shuttle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 48px;
+  z-index: 20;
+  cursor: pointer;
+  pointer-events: auto;
+
+  filter:
+    drop-shadow(
+      0 0 10px rgba(210, 205, 255, 0.7)
+    );
+
+  /*
+    IMPORTANT:
+    No CSS animation here.
+    GSAP controls the shuttle movement.
+  */
+}
+
+
+/* Shuttle feathers */
+
+.shuttle-feathers {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 30px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 20%,
+      rgba(235, 233, 255, 0.9) 21% 30%,
+      transparent 31% 45%,
+      rgba(235, 233, 255, 0.9) 46% 55%,
+      transparent 56% 70%,
+      rgba(235, 233, 255, 0.9) 71% 80%,
+      transparent 81%
+    );
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+
+/* Shuttle head */
+
+.shuttle-head {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+
+  width: 17px;
+  height: 17px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffffff,
+      #aaa3ed 70%,
+      #655db0
+    );
+
+  box-shadow:
+    0 0 15px rgba(170, 163, 237, 0.8);
+}
+/* ==================================================
+   GAME INSTRUCTION
+   ================================================== */
+
+.game-instruction {
+  margin-top: 22px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* ==================================================
+   GAME MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+  .game-header {
+    top: 25px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 20px;
+  }
+
+  .game-header > div:first-child {
+    grid-column: 1 / -1;
+
+    text-align: center;
+  }
+
+  .court {
+    width: 88vw;
+    height: 58vh;
+  }
+
+  .shuttle {
+    width: 30px;
+    height: 43px;
+  }
+
+}
