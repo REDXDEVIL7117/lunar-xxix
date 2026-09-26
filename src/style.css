@@ -1464,3 +1464,1391 @@ body {
   }
 
 }
+
+/* ==================================================
+   HIT EFFECT
+   ================================================== */
+
+.hit-effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 12px;
+  height: 12px;
+
+  border: 1px solid rgba(235, 233, 255, 0.9);
+  border-radius: 50%;
+
+  pointer-events: none;
+  opacity: 0;
+  z-index: 19;
+
+  transform: translate(-50%, -50%) scale(0.2);
+}
+
+/* ============================================================
+   LUNARXXIX - FULL ANIMATION PASS
+   ============================================================ */
+
+
+/* ============================================================
+   GAME COUNTDOWN
+   ============================================================ */
+
+.game-countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+
+  transform: translate(-50%, -50%);
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(70px, 12vw, 150px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: rgba(235, 233, 255, 0.95);
+
+  text-shadow:
+    0 0 20px rgba(170, 160, 255, 0.65),
+    0 0 60px rgba(110, 90, 255, 0.35);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   HIT EFFECT
+   ============================================================ */
+
+.hit-effect {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1px solid rgba(235, 233, 255, 0.95);
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  z-index: 19;
+
+  transform: translate(-50%, -50%) scale(0.2);
+
+  box-shadow:
+    0 0 15px rgba(190, 180, 255, 0.55),
+    0 0 35px rgba(120, 100, 255, 0.25);
+}
+
+
+/* ============================================================
+   SCORE POP
+   ============================================================ */
+
+.score-pop {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  z-index: 25;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(245, 243, 255, 0.95);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: translate(-50%, -50%);
+
+  text-shadow:
+    0 0 12px rgba(180, 170, 255, 0.8);
+}
+
+
+/* ============================================================
+   COMBO POP
+   ============================================================ */
+
+.combo-pop {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  z-index: 24;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  color: rgba(190, 180, 255, 0.9);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: translate(-50%, -50%);
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 15px rgba(150, 130, 255, 0.5);
+}
+
+
+/* ============================================================
+   TIMER WARNING
+   ============================================================ */
+
+.timer-danger {
+  color: #d9d4ff !important;
+
+  text-shadow:
+    0 0 12px rgba(190, 170, 255, 0.75),
+    0 0 30px rgba(120, 100, 255, 0.35) !important;
+}
+
+
+/* ============================================================
+   VERDICT SCREEN
+   ============================================================ */
+
+.verdict-screen {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 80;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(85, 70, 190, 0.2),
+      transparent 52%
+    ),
+    rgba(2, 3, 10, 0.96);
+}
+
+
+.verdict-content {
+  width: min(700px, 88vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+
+.verdict-label {
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+
+.verdict-score-label {
+  margin-top: 40px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+
+.verdict-score {
+  margin-top: 5px;
+
+  font-size: clamp(90px, 15vw, 170px);
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  color: rgba(235, 233, 255, 0.96);
+
+  text-shadow:
+    0 0 30px rgba(170, 160, 255, 0.45);
+}
+
+
+.verdict-rank {
+  margin-top: 28px;
+
+  font-size: clamp(24px, 4vw, 42px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+
+  color: #aaa3ed;
+
+  text-shadow:
+    0 0 25px rgba(150, 130, 255, 0.45);
+}
+
+
+.verdict-line {
+  width: min(280px, 55vw);
+
+  height: 1px;
+
+  margin-top: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 215, 255, 0.65),
+      transparent
+    );
+
+  transform-origin: center;
+}
+
+
+.verdict-message {
+  margin-top: 28px;
+
+  max-width: 600px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+  line-height: 2;
+
+  color: rgba(255, 255, 255, 0.52);
+}
+
+
+.birthday-button {
+  margin-top: 42px;
+
+  padding: 14px 26px;
+
+  border: 1px solid rgba(220, 215, 255, 0.35);
+
+  background: rgba(10, 10, 25, 0.45);
+
+  color: rgba(245, 243, 255, 0.9);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.birthday-button span {
+  margin-left: 12px;
+}
+
+
+.birthday-button:hover {
+  border-color: rgba(220, 215, 255, 0.75);
+
+  background:
+    rgba(90, 75, 180, 0.15);
+}
+
+
+/* ============================================================
+   BIRTHDAY SCREEN
+   ============================================================ */
+
+.birthday-screen {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 90;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(90, 75, 200, 0.22),
+      transparent 55%
+    ),
+    rgba(2, 3, 10, 0.97);
+}
+
+
+.birthday-content {
+  width: min(850px, 90vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.birthday-eyebrow {
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color: rgba(255, 255, 255, 0.42);
+}
+
+
+.birthday-content h2 {
+  margin: 35px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(50px, 10vw, 120px);
+
+  line-height: 0.85;
+
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+
+  color: rgba(240, 238, 255, 0.95);
+
+  text-shadow:
+    0 0 35px rgba(170, 160, 255, 0.28);
+}
+
+
+.birthday-content h2 span {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.35em;
+
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  color: #aaa3ed;
+}
+
+
+.birthday-name {
+  margin-top: 42px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(30px, 6vw, 70px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.4em;
+
+  padding-left: 0.4em;
+
+  color: rgba(245, 243, 255, 0.95);
+
+  text-shadow:
+    0 0 25px rgba(170, 160, 255, 0.45);
+}
+
+
+.birthday-line {
+  width: min(300px, 55vw);
+
+  height: 1px;
+
+  margin-top: 32px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 215, 255, 0.65),
+      transparent
+    );
+
+  transform-origin: center;
+}
+
+
+.birthday-content p {
+  margin-top: 32px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  line-height: 2.2;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.birthday-final {
+  margin-top: 42px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color: rgba(190, 180, 255, 0.85);
+
+  text-shadow:
+    0 0 18px rgba(150, 130, 255, 0.45);
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .game-countdown {
+    font-size: 80px;
+  }
+
+  .verdict-score {
+    font-size: 100px;
+  }
+
+  .verdict-rank {
+    letter-spacing: 0.18em;
+  }
+
+  .verdict-message {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    padding: 0 20px;
+  }
+
+  .birthday-content h2 {
+    font-size: 58px;
+  }
+
+  .birthday-name {
+    font-size: 35px;
+    letter-spacing: 0.25em;
+  }
+
+  .birthday-final {
+    letter-spacing: 0.3em;
+  }
+
+}
+
+/* ============================================================
+   REAL BADMINTON RALLY SYSTEM
+============================================================ */
+
+
+/* ============================================================
+   PLAYER / OPPONENT
+============================================================ */
+
+.player-side,
+.opponent-side {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 12;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  pointer-events: none;
+}
+
+.player-side {
+  left: 6%;
+
+  transform: translateY(-50%);
+}
+
+.opponent-side {
+  right: 6%;
+
+  transform: translateY(-50%);
+}
+
+.player-side > span,
+.opponent-side > span {
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* ============================================================
+   RACKETS
+============================================================ */
+
+.player-racket,
+.opponent-racket {
+  position: relative;
+
+  width: 54px;
+  height: 90px;
+
+  transform-origin: center bottom;
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(170, 160, 255, 0.28)
+    );
+}
+
+
+/* Racket head */
+
+.racket-head {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 42px;
+  height: 54px;
+
+  transform: translateX(-50%);
+
+  border: 2px solid rgba(225, 222, 255, 0.7);
+
+  border-radius: 50% 50% 48% 48%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(130, 120, 220, 0.12),
+      transparent 65%
+    );
+
+  box-shadow:
+    inset 0 0 12px rgba(180, 170, 255, 0.12),
+    0 0 14px rgba(130, 115, 230, 0.16);
+}
+
+
+/* Strings */
+
+.racket-head::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 5px;
+
+  border-radius: 50%;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 5px,
+      rgba(225, 222, 255, 0.17) 5px 6px
+    );
+}
+
+.racket-head::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 5px;
+
+  border-radius: 50%;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 5px,
+      rgba(225, 222, 255, 0.17) 5px 6px
+    );
+}
+
+
+/* Handle */
+
+.racket-handle {
+  position: absolute;
+
+  left: 50%;
+  top: 51px;
+
+  width: 5px;
+  height: 32px;
+
+  transform: translateX(-50%);
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(90, 80, 150, 0.8),
+      rgba(220, 215, 255, 0.75),
+      rgba(90, 80, 150, 0.8)
+    );
+}
+
+
+/* Flip opponent racket */
+
+.opponent-racket {
+  transform: scaleX(-1);
+}
+
+
+/* ============================================================
+   BETTER SHUTTLE
+============================================================ */
+
+.shuttle {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 42px;
+  height: 54px;
+
+  z-index: 25;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  transform-origin: center center;
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(220, 215, 255, 0.65)
+    );
+}
+
+
+/* Feather cone */
+
+.shuttle-feathers {
+  position: absolute;
+
+  top: 1px;
+  left: 50%;
+
+  width: 32px;
+  height: 36px;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+
+  clip-path:
+    polygon(
+      18% 0,
+      82% 0,
+      100% 100%,
+      0 100%
+    );
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(240, 238, 255, 0.1),
+      rgba(245, 243, 255, 0.95) 25%,
+      rgba(170, 163, 237, 0.75) 50%,
+      rgba(245, 243, 255, 0.95) 75%,
+      rgba(240, 238, 255, 0.1)
+    );
+}
+
+
+/* Feather ribs */
+
+.shuttle-feathers i {
+  position: absolute;
+
+  top: 2px;
+
+  width: 1px;
+  height: 32px;
+
+  background:
+    rgba(85, 78, 145, 0.75);
+
+  transform-origin: bottom center;
+}
+
+.shuttle-feathers i:nth-child(1) {
+  left: 7px;
+  transform: rotate(-18deg);
+}
+
+.shuttle-feathers i:nth-child(2) {
+  left: 12px;
+  transform: rotate(-9deg);
+}
+
+.shuttle-feathers i:nth-child(3) {
+  left: 16px;
+}
+
+.shuttle-feathers i:nth-child(4) {
+  left: 20px;
+  transform: rotate(9deg);
+}
+
+.shuttle-feathers i:nth-child(5) {
+  left: 25px;
+  transform: rotate(18deg);
+}
+
+
+/* Cork head */
+
+.shuttle-head {
+  position: absolute;
+
+  bottom: 1px;
+  left: 50%;
+
+  width: 19px;
+  height: 19px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      #ffffff,
+      #d5d1ff 45%,
+      #7770bc 100%
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0 0 10px rgba(190, 180, 255, 0.7);
+}
+
+
+/* ============================================================
+   HIT EFFECT
+============================================================ */
+
+.hit-effect {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 18px;
+  height: 18px;
+
+  border:
+    1px solid
+    rgba(235, 233, 255, 0.95);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  z-index: 20;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.2);
+
+  box-shadow:
+    0 0 15px rgba(190, 180, 255, 0.55),
+    0 0 35px rgba(120, 100, 255, 0.25);
+}
+
+
+/* ============================================================
+   +1
+============================================================ */
+
+.score-pop {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  z-index: 30;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(245, 243, 255, 0.95);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%);
+
+  text-shadow:
+    0 0 12px rgba(180, 170, 255, 0.8);
+}
+
+
+/* ============================================================
+   SPEED UP
+============================================================ */
+
+.speed-pop {
+  position: absolute;
+
+  left: 50%;
+  top: 38%;
+
+  z-index: 35;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.4em;
+
+  color:
+    rgba(205, 198, 255, 0.9);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 20px rgba(150, 130, 255, 0.65);
+}
+
+
+/* ============================================================
+   MISS
+============================================================ */
+
+.miss-pop {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  z-index: 35;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  color:
+    rgba(255, 220, 220, 0.8);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+
+/* ============================================================
+   COUNTDOWN
+============================================================ */
+
+.game-countdown {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 100;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-family: Arial, sans-serif;
+
+  font-size:
+    clamp(70px, 12vw, 150px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color:
+    rgba(235, 233, 255, 0.95);
+
+  text-shadow:
+    0 0 20px rgba(170, 160, 255, 0.65),
+    0 0 60px rgba(110, 90, 255, 0.35);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   TIMER
+============================================================ */
+
+.timer-danger {
+  color: #d9d4ff !important;
+
+  text-shadow:
+    0 0 12px rgba(190, 170, 255, 0.75),
+    0 0 30px rgba(120, 100, 255, 0.35) !important;
+}
+
+
+/* ============================================================
+   VERDICT
+============================================================ */
+
+.verdict-screen {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 80;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(85, 70, 190, 0.2),
+      transparent 52%
+    ),
+    rgba(2, 3, 10, 0.96);
+}
+
+
+.verdict-content {
+  width: min(700px, 88vw);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+
+.verdict-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+}
+
+
+.verdict-score-label {
+  margin-top: 40px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+
+.verdict-score {
+  margin-top: 5px;
+
+  font-size:
+    clamp(90px, 15vw, 170px);
+
+  line-height: 0.9;
+
+  font-weight: 700;
+
+  color:
+    rgba(235, 233, 255, 0.96);
+
+  text-shadow:
+    0 0 30px rgba(170, 160, 255, 0.45);
+}
+
+
+.verdict-rank {
+  margin-top: 28px;
+
+  font-size:
+    clamp(24px, 4vw, 42px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+
+  color: #aaa3ed;
+}
+
+
+.verdict-line {
+  width: min(280px, 55vw);
+
+  height: 1px;
+
+  margin-top: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 215, 255, 0.65),
+      transparent
+    );
+}
+
+
+.verdict-message {
+  margin-top: 28px;
+
+  max-width: 600px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  line-height: 2;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+}
+
+
+.birthday-button {
+  margin-top: 42px;
+
+  padding: 14px 26px;
+
+  border:
+    1px solid
+    rgba(220, 215, 255, 0.35);
+
+  background:
+    rgba(10, 10, 25, 0.45);
+
+  color:
+    rgba(245, 243, 255, 0.9);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   BIRTHDAY
+============================================================ */
+
+.birthday-screen {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 90;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(90, 75, 200, 0.22),
+      transparent 55%
+    ),
+    rgba(2, 3, 10, 0.97);
+}
+
+
+.birthday-content {
+  width: min(850px, 90vw);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.birthday-eyebrow {
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color:
+    rgba(255, 255, 255, 0.42);
+}
+
+
+.birthday-content h2 {
+  margin: 35px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size:
+    clamp(50px, 10vw, 120px);
+
+  line-height: 0.85;
+
+  font-weight: 400;
+
+  color:
+    rgba(240, 238, 255, 0.95);
+}
+
+
+.birthday-content h2 span {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.35em;
+
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  color: #aaa3ed;
+}
+
+
+.birthday-name {
+  margin-top: 42px;
+
+  font-family: Arial, sans-serif;
+
+  font-size:
+    clamp(30px, 6vw, 70px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.4em;
+
+  color:
+    rgba(245, 243, 255, 0.95);
+}
+
+
+.birthday-line {
+  width: min(300px, 55vw);
+
+  height: 1px;
+
+  margin-top: 32px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(220, 215, 255, 0.65),
+      transparent
+    );
+}
+
+
+.birthday-content p {
+  margin-top: 32px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3em;
+
+  line-height: 2.2;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+.birthday-final {
+  margin-top: 42px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5em;
+
+  color:
+    rgba(190, 180, 255, 0.85);
+
+  text-shadow:
+    0 0 18px rgba(150, 130, 255, 0.45);
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+  .player-side {
+    left: 3%;
+  }
+
+  .opponent-side {
+    right: 3%;
+  }
+
+  .player-racket,
+  .opponent-racket {
+    transform: scale(0.75);
+  }
+
+  .opponent-racket {
+    transform: scaleX(-1) scale(0.75);
+  }
+
+  .shuttle {
+    transform-origin: center;
+  }
+
+  .game-countdown {
+    font-size: 80px;
+  }
+
+  .verdict-score {
+    font-size: 100px;
+  }
+
+  .birthday-content h2 {
+    font-size: 58px;
+  }
+
+  .birthday-name {
+    font-size: 35px;
+    letter-spacing: 0.25em;
+  }
+
+}
